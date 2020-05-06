@@ -121,8 +121,8 @@ class Uniswap(Contract):
         return int(time.time()) + 1000
 
     def __eq__(self, other):
-        assert(isinstance(other, UniswapExchange))
-        return self.address == other.address
+        assert(isinstance(other, Uniswap))
+        return self.exchange == other.exchange
 
     def __repr__(self):
         return f"UniswapExchange('{self.exchange}')"
