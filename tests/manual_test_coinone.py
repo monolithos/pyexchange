@@ -17,31 +17,22 @@
 
 import sys
 
-from pyexchange.dydx import DydxApi
+from pyexchange.coinone import CoinoneApi
+from pymaker.numeric import Wad
 
-dydx = DydxApi(sys.argv[1], sys.argv[2])
+coinone = CoinoneApi('https://api.coinone.co.kr/', sys.argv[1], sys.argv[2], 9.5)
+print("Starting Coinone with the following parameters: ", sys.argv)
 
-# print(dydx.get_markets())
-# print(dydx.get_pair("WETH-DAI"))
+# print(coinone.get_markets())
 
-# print(dydx.get_balances())
+# print(coinone.get_balances())
 
-# print(dydx.deposit_funds("USDC", 1.0))
+# print(coinone.place_order('ETH-KRW', True, Wad.from_number(256500.4), Wad.from_number(0.2)))
 
-# print(dydx.set_allowances())
+# print(coinone.get_orders('ETH-KRW'))
 
-# print(dydx.get_balances())
+# print(coinone.cancel_order('4db8bb7e-1e4d-11e9-9ec7-00e04c3600d7', 'ETH-KRW', Wad.from_number(238100), Wad.from_number(0.1), False))
 
-# print(dydx.withdraw_funds("ETH", 0.998))
-# print(dydx.withdraw_all_funds("USDC"))
+# print(coinone.get_orders('ETH-KRW'))
 
-# print(dydx.place_order("WETH-DAI", True, 136.0, 0.1))
-# print(dydx.place_order("DAI-USDC", False, 1.0303, 25.0))
-
-# print(dydx.get_orders("WETH-DAI"))
-
-# print(dydx.get_trades("WETH-DAI"))
-
-# print(dydx.cancel_order("0x2619bd0ddaeb4a984bab6c134c132d75d7ec640f026404116ef58ab89c00be77"))
-
-
+# print(coinone.get_trades('ETH-KRW'))
