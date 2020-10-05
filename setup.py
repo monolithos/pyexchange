@@ -6,13 +6,13 @@ setup(
     packages=[
         'pyexchange',
     ],
-    url='https://github.com/makerdao/pyexchange.git',
+    url='https://github.com/monolithos/pyexchange.git',
     license='',
     author='',
     author_email='',
     description='',
     install_requires=[
-        "pymaker==1.2",
+        "pymaker==1.2.*",
         "python-dateutil==2.8.1",
         "websockets==8.1.0",
         "python-kucoin==2.1.2",
